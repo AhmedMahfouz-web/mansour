@@ -1,6 +1,6 @@
 @extends('admin.layout.admin')
 
-@section('title', 'New Location')
+@section('title', 'New Project')
 
 @section('path')
 {{-- <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}"><i class="fa fa-home"></i></a></li>
@@ -15,9 +15,9 @@
         <div class="col-lg-12 col-md-12">
             <div class="card">
                 <div class="header">
-                    <h2>Create New Location</h2>
+                    <h2>Create New Project</h2>
                 </div>
-                <form id="wizard_with_validation" action="{{route('store.location')}}" method="POST"
+                <form id="wizard_with_validation" action="{{route('store.project')}}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
                     <div class="content clearfix">
@@ -33,7 +33,7 @@
                                         </div>
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="inputGroupFile01"
-                                                name="main_img">
+                                                name="photo">
                                             <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                         </div>
                                         @error('photo')
@@ -49,7 +49,7 @@
                                     <div class="form-group form-float">
                                         <label class="d-block font-weight-bold" for="name">Name </label>
                                         <input type="text" class="form-control valid"
-                                            placeholder="Naser City, Mokattm..." name="location_name"
+                                            placeholder="Naser City, Mokattm..." name="project_name"
                                             aria-required="true">
 
                                         {{-- @error("category.$key.name")
