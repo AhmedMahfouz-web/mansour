@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('project_name', 100);
             $table->string('brochure', 100)->nullable();
+            $table->string('main_img', 100);
             $table->string('sepcifications', 100);
             $table->string('video', 100)->nullable();
             $table->integer('location_id')->unsigned();

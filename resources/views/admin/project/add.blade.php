@@ -24,7 +24,7 @@
                         <fieldset class="body">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
-                                    <label class="d-block font-weight-bold">Location Photo</label>
+                                    <label class="d-block font-weight-bold">Project Photo</label>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <label for="inputGroupFile01">
@@ -33,8 +33,26 @@
                                         </div>
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="inputGroupFile01"
-                                                name="photo">
-                                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                                name="main_img">
+                                            <label class="custom-file-label" for="inputGroupFile01">Choose photo</label>
+                                        </div>
+                                        @error('photo')
+                                        <span class="text-danger">هذا الحقل مطلوب</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <label class="d-block font-weight-bold">Borchure</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <label for="inputGroupFile01">
+                                                <span class="btn btn-tertiary">Upload</span>
+                                            </label>
+                                        </div>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="inputGroupFile02"
+                                                name="borchure">
+                                            <label class="custom-file-label" for="inputGroupFile02">Choose PDF</label>
                                         </div>
                                         @error('photo')
                                         <span class="text-danger">هذا الحقل مطلوب</span>
@@ -58,15 +76,20 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 col-md-6 mt-2">
+                                <div class="col-md-6 col-md-6 mt-2">
                                     <div class="form-group form-float">
-                                        <label class="d-block font-weight-bold" for="name">Map </label>
-                                        <input type="text" class="form-control valid"
-                                            placeholder="Location" name="map"
-                                            aria-required="true">
-
-                                        {{-- @error("category.$key.name")
-                                        <span class="text-danger">هذا الحقل مطلوب</span>
+                                        <label class="d-block font-weight-bold" for="location_id">Location</label>
+                                        <select class="selectpicker" data-style="btn-none" title="Select Category"
+                                            data-live-search="true" data-live-search-placeholder="Search ..."
+                                            name="location_id" id="location_id">
+                                            @foreach ($locations as $location)
+                                                <option value="{{ $location->id }}">
+                                                    {{ $location->location_name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        {{-- @error('main_category_id')
+                                            <span class="text-danger">{{ $message }}</span>
                                         @enderror --}}
                                     </div>
                                 </div>
@@ -74,10 +97,11 @@
                                 <div class="col-lg-6 col-md-6 mt-2">
                                     <div class="form-group form-float">
                                         <label class="d-block font-weight-bold" for="name">Slugan </label>
-                                        <input type="text" class="form-control valid"
-                                            placeholder="Slugan" name="slugan"
-                                            aria-required="true">
-
+                                        <div id="editor">
+                                            <p>Hello World!</p>
+                                            <p>Some initial <strong>bold</strong> text</p>
+                                            <p><br></p>
+                                          </div>
                                         {{-- @error("category.$key.name")
                                         <span class="text-danger">هذا الحقل مطلوب</span>
                                         @enderror --}}
@@ -119,4 +143,12 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
+<script>
+    var quill = new Quill('#editor', {
+      theme: 'snow'
+    });
+  </script>    
 @endsection

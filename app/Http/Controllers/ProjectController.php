@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Project;
+use App\Models\Location;    
+use Illuminate\Support\Facades\DB;
 
 class ProjectController extends Controller
 {
@@ -15,7 +18,7 @@ class ProjectController extends Controller
 
     //Add Project
     public function add(){
-        $locations = Location::selection('id', 'location_name')->all();
+        $locations = Location::select('id', 'location_name')->get();
 
         return view('admin.project.add', compact('locations'));
     }

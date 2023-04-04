@@ -14,8 +14,8 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="header">
-                        <h2>Locations</h2>
-                        <a href={{route('add.location')}} class="btn-primary btn float-right"><i
+                        <h2>Projects</h2>
+                        <a href={{route('add.project')}} class="btn-primary btn float-right"><i
                                 class="fa fa-plus" aria-hidden="true"></i> Add</a>
                     </div>
                     <div class="body">
@@ -32,19 +32,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @isset($locations)
-                                    @foreach ($locations as $key => $location)
+                                    @isset($projects)
+                                    @foreach ($projects as $key => $project)
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
-                                        <td>{{ $location->location_name }}</td>
-                                        <td>{{ $location->img }}</td>
-                                        <td>{{ $location->slugan }}</td>
-                                        <td> <a href="{{$location->map}}">Google Maps</a> </td>
+                                        <td>{{ $project->project_name }}</td>
+                                        <td>{{ $project->img }}</td>
+                                        <td>{{ $project->slugan }}</td>
+                                        <td> <a href="{{$project->map}}">Google Maps</a> </td>
                                         <td>
-                                            <a href="{{route('edit.location', $location->id)}}"
+                                            <a href="{{route('edit.project', $project->id)}}"
                                                 class="btn btn-secondary mr-1"><i class="fa fa-pencil-square-o"
                                                     aria-hidden="true"></i> Edit</a>
-                                            <a href="{{route('destroy.location', $location->id)}}"
+                                            <a href="{{route('destroy.project', $project->id)}}"
                                                 class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i>
                                                 Delete</a>
                                         </td>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,24 @@ Route::prefix('admin')->group(function () {
             Route::post('/update/{id}', 'update')->name('update.location');
             //Destroy Location
             Route::put('/destroy/{id}', 'destroy')->name('destroy.location');
+        });
+    });
+
+    //Project Routes
+    Route::controller(ProjectController::class)->group(function () {
+        Route::prefix('project')->group(function () {
+            //Show Projects
+            Route::get('/', 'index')->name('show.projects');
+            //Add Projects 
+            Route::get('/add', 'add')->name('add.project');
+            //store Project 
+            Route::post('/store', 'store')->name('store.project');
+            //Edit Projects 
+            Route::get('/edit/{id}', 'edit')->name('edit.project');
+            //update Project 
+            Route::post('/update/{id}', 'update')->name('update.project');
+            //Destroy Project
+            Route::put('/destroy/{id}', 'destroy')->name('destroy.project');
         });
     });
 

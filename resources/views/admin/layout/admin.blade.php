@@ -10,6 +10,7 @@
 
 <link rel="stylesheet" href="{{asset('vendor/themify-icons/themify-icons.css')}}">
 <link rel="stylesheet" href="{{asset('vendor/fontawesome/css/font-awesome.min.css')}}">
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
 <link rel="stylesheet" href="{{asset('vendor/charts-c3/plugin.css')}}"/>
 <link rel="stylesheet" href="{{asset('vendor/jvectormap/jquery-jvectormap-2.0.3.css')}}"/>
@@ -112,9 +113,11 @@
 
 <script src="{{asset('bundles/c3.bundle.js')}}"></script>
 <script src="{{asset('bundles/jvectormap.bundle.js')}}"></script> <!-- JVectorMap Plugin Js -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
 <script src="{{asset('js/theme.js')}}"></script>
 <script src="{{asset('js/pages/index.js')}}"></script>
 <script src="{{asset('js/pages/todo-js.js')}}"></script>
+@yield('js')
 </body>
 </html>

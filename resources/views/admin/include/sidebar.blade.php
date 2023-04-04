@@ -25,14 +25,16 @@
                        
                     </ul>
                 </li>
+                
+                <li class="open-top">
+                    <a href="javascript:void(0)" class="has-arrow"><i class="ti-clipboard"></i><span>Projects</span></a>
+                    <ul>
+                        <li><a href="{{route('show.projects')}}">Show All</a></li>
+                        <li><a href="{{route('add.project')}}">Add New</a></li>
+                       
+                    </ul>
+                </li>
 
-                <li class="g_heading">Application</li>
-                <li><a href="app-calendar.html"><i class="ti-calendar"></i><span>Calendar</span></a></li>
-                <li><a href="app-taskboard.html"><i class="ti-notepad"></i><span>TaskBoard</span></a></li>
-                <li><a href="app-inbox.html"><i class="ti-email"></i><span>Inbox</span></a></li>
-                <li><a href="app-chat.html"><i class="ti-comments"></i><span>Chat Apps</span></a></li>
-                <li><a href="app-contact.html"><i class="ti-id-badge"></i><span>Contact List</span></a></li>
-                <li><a href="widgets.html"><i class="ti-widget"></i><span>Widgets</span></a></li>
 
                 {{-- <li class="g_heading">Extra</li>
                 <li class="open-top">
